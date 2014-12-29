@@ -89,7 +89,7 @@ ${color grey}File systems:
 ${fs_bar 6 /}
 $hr
 ${color grey}Wireless AP:$color ${wireless_essid wlp1s0}
-${color grey}Bitrate:$color  ${wireless_bitrate wlp1s0} ${goto 120}${color grey}Strength:$color ${wireless_link_qual wlp1s0}%
+${color grey}Bitrate:$color ${wireless_bitrate wlp1s0} ${tab 10}${color grey}Strength:$color ${wireless_link_qual wlp1s0}%
 $stippled_hr
 ${color grey}Up:$color ${upspeed wlp1s0} ${goto 118}${color grey} Down:$color ${downspeed wlp1s0}
 ${color grey}Total:$color ${totalup wlp1s0} ${goto 118}${color grey} Total:$color ${totaldown wlp1s0}

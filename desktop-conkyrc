@@ -23,7 +23,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-#background no
 own_window_type desktop
 alignment top_right
 border_inner_margin 4
@@ -39,8 +38,8 @@ draw_graph_borders yes
 draw_outline no
 draw_shades no
 extra_newline no
-gap_x 10
-gap_y 120
+gap_x 20
+gap_y 50
 maximum_width 550
 minimum_size 5 5
 net_avg_samples 2
@@ -70,8 +69,7 @@ $sysname $kernel on $machine
 $hr
 ${color grey}Uptime:$color $uptime
 ${color grey}Frequency (in MHz):$color $freq
-${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
-${color grey}Package Updates: $color ${execpi 3600 checkupdates | wc -l}
+${color grey}Processes:$color $processes  ${color grey}Running:$color $running_threads
 $hr
 ${color grey}CPU Usage:$color $cpu% ${color grey}Temp:$color $acpitemp C
 ${cpubar 4}
@@ -80,20 +78,19 @@ ${color grey}RAM Usage:$color $mem/$memmax - $memperc%
 ${membar 4}
 ${color grey}Swap Usage:$color $swap/$swapmax - $swapperc%
 ${swapbar 4}
-${color grey}Battery Status:$color ${battery}
-${color grey}Battery Time:$color $battery_time
-${battery_bar}
 $hr
 ${color grey}File systems:
  root (/) $color${fs_used /}/${fs_size /}
 ${fs_bar 6 /}
+ home (/home) $color${fs_used /home}/${fs_size /home}
+${fs_bar 6 /home}
 $hr
-${color grey}Wireless AP:$color ${wireless_essid wlp1s0}
-${color grey}Bitrate:$color ${wireless_bitrate wlp1s0} ${tab 10}${color grey}Strength:$color ${wireless_link_qual wlp1s0}%
+${color grey}Wireless AP:$color ${wireless_essid wlan0}
+${color grey}Bitrate:$color ${wireless_bitrate wlan0} ${tab 10}${color grey}Strength:$color ${wireless_link_qual wlan0}%
 $stippled_hr
-${color grey}Up:$color ${upspeed wlp1s0} ${goto 118}${color grey} Down:$color ${downspeed wlp1s0}
-${color grey}Total:$color ${totalup wlp1s0} ${goto 118}${color grey} Total:$color ${totaldown wlp1s0}
-${downspeedgraph wlp1s0 25,100}      ${upspeedgraph wlp1s0 25,100} 
+${color grey}Up:$color ${upspeed wlan0} ${goto 118}${color grey} Down:$color ${downspeed wlan0}
+${color grey}Total:$color ${totalup wlan0} ${goto 118}${color grey} Total:$color ${totaldown wlan0}
+${downspeedgraph wlan0 25,100}      ${upspeedgraph wlan0 25,100} 
 $hr
 ${color grey}Name              PID   CPU%   MEM%
 ${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}

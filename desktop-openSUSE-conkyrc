@@ -71,20 +71,24 @@ ${color grey}Uptime:$color $uptime
 ${color grey}Frequency (in MHz):$color $freq
 ${color grey}Processes:$color $processes  ${color grey}Running:$color $running_threads
 $hr
-${color grey}CPU Usage:$color $cpu% ${color grey}Temp:$color $acpitemp C
+${color grey}CPU Usage:$color $cpu% ${color grey}Sys Temp:$color ${hwmon 0 temp 1}C ${hwmon 0 temp 2}C
 ${cpubar 4}
 ${cpugraph}
-${cpugraph cpu0 20, 122}  ${cpugraph cpu1 20, 122}
-${cpugraph cpu2 20, 122}  ${cpugraph cpu3 20, 122}
+$stippled_hr
+${color grey}Core 1:$color ${hwmon 1 temp 1}C ${cpubar 4 cpu0}
+${color grey}Core 2:$color ${hwmon 1 temp 2}C ${cpubar 4 cpu1}
+${color grey}Core 3:$color ${hwmon 1 temp 3}C ${cpubar 4 cpu2}
+${color grey}Core 4:$color ${hwmon 1 temp 4}C ${cpubar 4 cpu3}
+$stippled_hr
 ${color grey}RAM Usage:$color $mem/$memmax - $memperc%
 ${membar 4}
 ${color grey}Swap Usage:$color $swap/$swapmax - $swapperc%
 ${swapbar 4}
 $hr
-${color grey}File systems:
- root (/) $color${fs_used /}/${fs_size /}
+${color grey}File systems:$color
+ ${color grey}root (/)$color ${fs_used /}/${fs_size /}
 ${fs_bar 6 /}
- home (/home) $color${fs_used /home}/${fs_size /home}
+ ${color grey}home (/home)$color ${fs_used /home}/${fs_size /home}
 ${fs_bar 6 /home}
 $hr
 ${color grey}Wireless AP:$color ${wireless_essid wlp4s0}

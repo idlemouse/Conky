@@ -1,4 +1,5 @@
 #!/bin/bash
+sleep 10
 a=`pidof conky`
 j=0
 if [ -z "$a" ];then

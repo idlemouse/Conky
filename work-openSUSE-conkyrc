@@ -65,7 +65,7 @@ xftalpha 1
 xftfont DejaVu Sans Mono:size=8
 
 TEXT
-[${color orange}jdf$color][$nodename]
+[${color orange}${uid_name 1000}$color][$nodename]
 $sysname $kernel
 $hr
 ${color grey}Uptime:$color $uptime

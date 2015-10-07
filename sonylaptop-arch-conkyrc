@@ -92,7 +92,7 @@ $hr
 ${color grey}File systems:
 ${color grey} root (/) $color${fs_used /}/${fs_size /}
 ${fs_bar 6 /}
-${color grey} boot (/biit) $color${fs_used /boot}/${fs_size /boot}
+${color grey} boot (/boot) $color${fs_used /boot}/${fs_size /boot}
 ${fs_bar 6 /boot}
 ${color grey} home (/home) $color${fs_used /home}/${fs_size /home}
 ${fs_bar 6 /home}
